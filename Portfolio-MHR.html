@@ -1,0 +1,1105 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Portfolio de développeur web Full Stack — projets, compétences et contact.">
+    <meta name="theme-color" content="#f7f8fa">
+    <title>Mohamed Reda AZRIOUIL — Développeur Full Stack</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        :root {
+            --bg: #f7f8fa;
+            --surface: #fff;
+            --ink: #18212f;
+            --muted: #667085;
+            --line: #e7eaf0;
+            --accent: #2563eb;
+            --accent-soft: #eef4ff;
+            --max: 1080px
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 82px
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font-family: "DM Sans", sans-serif;
+            line-height: 1.65
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        .wrap {
+            width: min(var(--max), calc(100% - 40px));
+            margin: auto
+        }
+
+        header {
+            height: 72px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: #ffffffeb;
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--line)
+        }
+
+        nav {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between
+        }
+
+        .logo {
+            font: 800 1.2rem Manrope;
+            letter-spacing: -.06em
+        }
+
+        .logo span {
+            color: var(--accent)
+        }
+
+        .links {
+            display: flex;
+            gap: 28px;
+            color: var(--muted);
+            font-size: .92rem
+        }
+
+        .links a:hover {
+            color: var(--accent)
+        }
+
+        .navright {
+            display: flex;
+            align-items: center;
+            gap: 14px
+        }
+
+        .lang {
+            border: 1px solid var(--line);
+            background: #fff;
+            border-radius: 8px;
+            padding: 7px 10px;
+            font: 700 .8rem "DM Sans";
+            color: var(--muted);
+            cursor: pointer
+        }
+
+        .lang .selected {
+            color: var(--accent)
+        }
+
+        .menu {
+            display: none;
+            border: 0;
+            background: none;
+            font-size: 1.4rem;
+            color: var(--ink)
+        }
+
+       .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-image {
+    flex: 0 0 320px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 320px;
+    height: 360px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-image {
+        flex-basis: auto;
+        width: 220px;
+    }
+
+    .hero-image img {
+        height: 250px;
+    }
+
+    .actions,
+    .meta {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+        .kicker {
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--accent)
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: Manrope, sans-serif;
+            letter-spacing: -.045em;
+            line-height: 1.18
+        }
+
+        h1 {
+            font-size: clamp(2.7rem, 6vw, 4.8rem);
+            max-width: 780px;
+            margin: 18px 0 20px
+        }
+
+        h1 span {
+            color: var(--accent)
+        }
+
+        .lead {
+            max-width: 650px;
+            color: var(--muted);
+            font-size: 1.1rem
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 28px
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 11px 16px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: .9rem;
+            transition: .18s
+        }
+
+        .primary {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff
+        }
+
+        .primary:hover {
+            background: #1d4ed8
+        }
+
+        .secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent)
+        }
+
+        .meta {
+            display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
+            margin-top: 36px;
+            color: var(--muted);
+            font-size: .88rem
+        }
+
+        .meta i {
+            color: var(--accent);
+            margin-right: 6px
+        }
+
+        section {
+            padding: 72px 0
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin: 8px 0 12px
+        }
+
+        .section-intro {
+            color: var(--muted);
+            max-width: 650px;
+            margin: 0 0 30px
+        }
+
+        .about {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 20px
+        }
+
+        .box {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 25px
+        }
+
+        .box p {
+            color: var(--muted);
+            margin: 0
+        }
+
+        .facts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 20px
+        }
+
+        .fact small {
+            display: block;
+            color: var(--muted);
+            font-size: .78rem
+        }
+
+        .fact strong {
+            font-size: .92rem
+        }
+
+        .focus {
+            display: grid;
+            gap: 12px;
+            margin-top: 14px
+        }
+
+        .focus div {
+            display: flex;
+            gap: 10px;
+            color: var(--muted)
+        }
+
+        .focus i {
+            color: var(--accent)
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px
+        }
+
+        .project {
+            padding: 0;
+            overflow: hidden
+        }
+
+        .thumb {
+            height: auto;
+            aspect-ratio: 16 / 9;
+            background: #edf2fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 2.7rem;
+            border-bottom: 1px solid var(--line);
+            overflow: hidden
+        }
+
+        .thumb img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top
+        }
+
+        .thumb.placeholder {
+            flex-direction: column;
+            gap: 8px;
+            font-size: 2rem
+        }
+
+        .thumb.placeholder span {
+            font: 600 .78rem "DM Sans", sans-serif;
+            color: var(--muted)
+        }
+
+        .project-status {
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            margin: -3px 0 13px;
+            padding: 3px 8px;
+            border-radius: 5px;
+            background: var(--accent-soft);
+            color: var(--accent);
+            font-size: .72rem;
+            font-weight: 700
+        }
+
+        .project-content {
+            padding: 21px
+        }
+
+        .project h3 {
+            font-size: 1.18rem;
+            margin: 0 0 8px
+        }
+
+        .project p {
+            color: var(--muted);
+            font-size: .91rem;
+            margin: 0 0 14px
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin: 0 0 17px
+        }
+
+        .tag {
+            font-size: .75rem;
+            color: #475467;
+            background: #f3f5f8;
+            border-radius: 5px;
+            padding: 4px 8px
+        }
+
+        .project-links {
+            display: flex;
+            gap: 18px;
+            color: var(--accent);
+            font-size: .86rem;
+            font-weight: 700
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px
+        }
+
+        .skill h3 {
+            font-size: 1rem;
+            margin: 0 0 12px
+        }
+
+        .skill h3 i {
+            color: var(--accent);
+            margin-right: 7px
+        }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px
+        }
+
+        .chips span {
+            font-size: .82rem;
+            padding: 6px 9px;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            color: #475467
+        }
+
+        .education {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px
+        }
+
+        .education h3 {
+            font-size: 1.08rem;
+            margin: 0 0 8px
+        }
+
+        .education p {
+            color: var(--muted);
+            margin: 0;
+            font-size: .92rem
+        }
+
+        .contact {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 18px
+        }
+
+        .contact-list {
+            display: grid;
+            gap: 12px;
+            margin-top: 18px;
+            color: var(--muted)
+        }
+
+        .contact-list i {
+            color: var(--accent);
+            margin-right: 9px
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px
+        }
+
+        .field {
+            display: grid;
+            gap: 6px
+        }
+
+        .field.full {
+            grid-column: 1/-1
+        }
+
+        label {
+            font-size: .82rem;
+            font-weight: 600
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 11px 12px;
+            border: 1px solid var(--line);
+            border-radius: 7px;
+            background: #fff;
+            font: inherit;
+            outline: none
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: var(--accent)
+        }
+
+        textarea {
+            min-height: 110px;
+            resize: vertical
+        }
+
+        .note {
+            font-size: .75rem;
+            color: var(--muted);
+            margin: 8px 0 0
+        }
+
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 22px 0;
+            color: var(--muted);
+            font-size: .84rem
+        }
+
+        .foot {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap
+        }
+
+        @media(max-width:800px) {
+            .links {
+                gap: 15px
+            }
+
+            .skills {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .about,
+            .contact {
+                grid-template-columns: 1fr
+            }
+        }
+
+        @media(max-width:620px) {
+            .wrap {
+                width: calc(100% - 30px)
+            }
+
+            header {
+                height: 66px
+            }
+
+            .menu {
+                display: block
+            }
+
+            .links {
+                display: none;
+                position: absolute;
+                top: 66px;
+                left: 0;
+                right: 0;
+                padding: 16px 20px;
+                background: white;
+                border-bottom: 1px solid var(--line);
+                flex-direction: column
+            }
+
+            .links.open {
+                display: flex
+            }
+
+            .hero {
+                padding: 78px 0 65px
+            }
+
+            section {
+                padding: 58px 0
+            }
+
+            .projects,
+            .education {
+                grid-template-columns: 1fr
+            }
+
+            .skills {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .facts {
+                grid-template-columns: 1fr 1fr
+            }
+
+            form {
+                grid-template-columns: 1fr
+            }
+
+            .field.full {
+                grid-column: auto
+            }
+
+            .section-title {
+                font-size: 1.7rem
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            html {
+                scroll-behavior: auto
+            }
+
+            * {
+                transition: none !important
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="wrap">
+            <a class="logo" href="#home">Mohamed Reda AZRIOUIL</a>
+            <div class="links" id="links"><a href="#about" data-i="navAbout">À propos</a><a href="#projects"
+                    data-i="navProjects">Projets</a><a href="#skills" data-i="navSkills">Compétences</a><a
+                    href="#education" data-i="navEducation">Formation</a><a href="#contact"
+                    data-i="navContact">Contact</a></div>
+            <div class="navright"><button class="lang" id="lang" aria-label="Switch language"><span id="fr"
+                        class="selected">FR</span> / <span id="en">EN</span></button><button class="menu" id="menu"
+                    aria-label="Menu"><i class="bi bi-list"></i></button></div>
+        </nav>
+    </header>
+    <main>
+ <section class="hero wrap" id="home">
+    <div class="hero-content">
+        <div class="kicker" data-i="availability">
+            Disponible pour un stage et des opportunités
+        </div>
+
+        <h1>
+            <span data-i="heroA">Développeur Web</span><br>
+            <span data-i="heroB">Full Stack</span>
+            <span data-i="heroC">passionné par le web.</span>
+        </h1>
+
+        <p class="lead" data-i="intro">
+            Bonjour, je suis Mohamed Reda AZRIOUIL. Je conçois et développe
+            des applications web modernes, de l'interface utilisateur au backend.
+        </p>
+
+        <div class="actions">
+            <a class="btn primary" href="#projects">
+                <span data-i="viewProjects">Voir mes projets</span>
+                <i class="bi bi-arrow-right"></i>
+            </a>
+
+            <a class="btn secondary" id="cvDownloadLink" href="assets/CV-DEV-FR.pdf" target="_blank" rel="noopener">
+                <span data-i="downloadCv">Télécharger mon CV</span>
+                <i class="bi bi-download"></i>
+            </a>
+        </div>
+
+        <div class="meta">
+            <span><i class="bi bi-geo-alt"></i> Rabat–Salé–Kénitra, Maroc</span>
+            <span><i class="bi bi-code-slash"></i> Full Stack Web Development</span>
+        </div>
+    </div>
+
+    <div class="hero-image">
+        <img src="assets/MR.png" alt="Mohamed Reda AZRIOUIL">
+    </div>
+</section>
+        <section id="about">
+            <div class="wrap">
+                <div class="kicker" data-i="aboutKicker">À propos</div>
+                <h2 class="section-title" data-i="aboutTitle">Un développeur orienté solutions.</h2>
+                <p class="section-intro" data-i="aboutIntro">Je suis diplômé Technicien Spécialisé en Développement Web
+                    Full Stack. J'aime transformer des idées en applications utiles et continuer à progresser à travers
+                    des projets concrets.</p>
+                <div class="about">
+                    <div class="box">
+                        <p data-i="aboutText">Je travaille avec React, JavaScript, PHP/Laravel et Node.js. Je
+                            m'intéresse autant à l'expérience utilisateur qu'à la logique backend, aux API et aux bases
+                            de données. Je privilégie un code clair, des interfaces responsives et des solutions simples
+                            à maintenir.</p>
+                        <div class="facts">
+                            <div class="fact"><small data-i="location">Localisation</small><strong>Morocco</strong>
+                            </div>
+                            <div class="fact"><small data-i="degree">Diplôme</small><strong
+                                    data-i="degreeValue">Technicien Spécialisé</strong></div>
+                            <div class="fact"><small data-i="focusLabel">Spécialité</small><strong>Full Stack
+                                    Web</strong></div>
+                            <div class="fact"><small data-i="seeking">Recherche</small><strong
+                                    data-i="seekingValue">Stage / Poste junior</strong></div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <h3 data-i="contribution" style="margin:0">Ce que je peux apporter</h3>
+                        <div class="focus">
+                            <div><i class="bi bi-check2"></i><span data-i="f1">Interfaces web responsives et
+                                    accessibles.</span></div>
+                            <div><i class="bi bi-check2"></i><span data-i="f2">Développement backend et intégration
+                                    d'API.</span></div>
+                            <div><i class="bi bi-check2"></i><span data-i="f3">Gestion de données avec MySQL et
+                                    MongoDB.</span></div>
+                            <div><i class="bi bi-check2"></i><span data-i="f4">Git, GitHub et méthodes
+                                    Agile/Scrum.</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="projects">
+            <div class="wrap">
+                <div class="kicker" data-i="projectsKicker">Sélection</div>
+                <h2 class="section-title" data-i="projectsTitle">Quelques projets.</h2>
+                <p class="section-intro" data-i="projectsIntro">Une sélection de projets réalisés ou développés dans le
+                    cadre de mon apprentissage. Consultez les démos et le code source.</p>
+                <div class="projects">
+                    <article class="box project">
+                        <div class="thumb">
+                            <img src="assets/dental-reservation.png" alt="Dental Reservation website homepage" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h3 data-i="dentalTitle">Dental Reservation System</h3>
+                            <p data-i="dentalDesc">Application web de réservation de rendez-vous pour un cabinet dentaire, développée avec un frontend et un backend.</p>
+                            <div class="project-status" data-i="statusNotDeployed">Projet non déployé</div>
+                            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Full Stack</span></div>
+                            <div class="project-links">
+                                <a href="https://github.com/RedaZAL/Dental-website" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="box project">
+                        <div class="thumb placeholder">
+                           <img src="assets/Pizza-store.png" alt="Dental Reservation website homepage" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h3 data-i="pizzaTitle">Pizza Store — Digital Menu</h3>
+                            <p data-i="pizzaDesc">Interface frontend pour un restaurant de pizza, présentant son menu et ses produits.</p>
+                            <div class="project-status" data-i="frontendOnly">Frontend uniquement</div>
+                            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+                            <div class="project-links">
+                                <a href="https://github.com/RedaZAL/Pizza-Store-Template" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="box project">
+                        <div class="thumb">
+                            <img src="assets/tawjih-maroc.png" alt="Tawjih Maroc education guidance platform homepage" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h3>Tawjih Maroc — Education Guidance Platform</h3>
+                            <p data-i="tawjihDesc">Plateforme d'orientation qui aide les étudiants marocains à découvrir les établissements, les filières et les informations après le baccalauréat.</p>
+                            <div class="project-status" data-i="clientNotDeployed">Projet client · Non déployé</div>
+                            <div class="tags"><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">Bootstrap</span><span class="tag">JavaScript</span></div>
+                            <div class="project-links">
+                                <span data-i="noPublicLink">Lien public non disponible</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="box project">
+                        <div class="thumb placeholder">
+                           <img src="assets/AFS-Park.png" alt="Dental Reservation website homepage" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h3>AFS Park — Parking Reservation</h3>
+                            <p data-i="afsDesc">Participation au développement d’une plateforme de réservation de parking près de l’aéroport, avec gestion des réservations, paiement en ligne et notifications.</p>
+                            <div class="project-status" data-i="contributionOnly">Contribution au projet</div>
+                            <div class="tags"><span class="tag">JavaScript</span><span class="tag">Express.js</span><span class="tag">Stripe</span><span class="tag">HTML/CSS</span></div>
+                            <div class="project-links">
+                                <a href="https://afspark.fr/" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> <span data-i="visitSite">Visiter le site</span></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section id="skills">
+            <div class="wrap">
+                <div class="kicker" data-i="skillsKicker">Outils</div>
+                <h2 class="section-title" data-i="skillsTitle">Compétences techniques.</h2>
+                <p class="section-intro" data-i="skillsIntro">Technologies étudiées et utilisées dans mes projets. Je
+                    veille à présenter uniquement les compétences que je peux expliquer et mettre en pratique.</p>
+                <div class="skills">
+                    <div class="box skill">
+                        <h3><i class="bi bi-window"></i>Frontend</h3>
+                        <div class="chips">
+                            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React.js</span><span>Vite</span><span>Bootstrap</span><span>Tailwind
+                                CSS</span></div>
+                    </div>
+                    <div class="box skill">
+                        <h3><i class="bi bi-server"></i>Backend</h3>
+                        <div class="chips">
+                            <span>PHP</span><span>Laravel</span><span>Node.js</span><span>Express.js</span><span>REST
+                                API</span></div>
+                    </div>
+                    <div class="box skill">
+                        <h3><i class="bi bi-database"></i>Database</h3>
+                        <div class="chips"><span>MySQL</span><span>MongoDB</span><span>phpMyAdmin</span></div>
+                    </div>
+                    <div class="box skill">
+                        <h3><i class="bi bi-tools"></i>Tools</h3>
+                        <div class="chips"><span>Git</span><span>GitHub</span><span>Docker
+                                basics</span><span>Scrum</span><span>UML</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="education">
+            <div class="wrap">
+                <div class="kicker" data-i="educationKicker">Parcours</div>
+                <h2 class="section-title" data-i="educationTitle">Formation & expérience.</h2>
+                <div class="education">
+                    <div class="box">
+                        <h3 data-i="educationName">Technicien Spécialisé — Développement Web Full Stack</h3>
+                        <p>OFPPT / ISTA · Morocco<br><span data-i="yearPlaceholder">Année d'obtention : à
+                                compléter</span></p>
+                    </div>
+                    <div class="box">
+                        <h3 data-i="experienceName">Stage / Expérience pratique</h3>
+                        <p data-i="experienceText">Ajoutez le nom de l'entreprise, le poste, les dates et les missions
+                            réellement effectuées. Si vous n'avez pas encore d'expérience, détaillez plutôt vos projets.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <div class="wrap">
+                <div class="kicker" data-i="contactKicker">Contact</div>
+                <h2 class="section-title" data-i="contactTitle">Parlons de votre projet.</h2>
+                <p class="section-intro" data-i="contactIntro">Je suis ouvert aux opportunités de stage, aux postes
+                    junior et aux projets web intéressants.</p>
+                <div class="contact">
+                    <div class="box">
+                        <h3 data-i="contactDetails">Mes coordonnées</h3>
+                        <div class="contact-list"><a href="mailto:your.email@example.com"><i
+                                    class="bi bi-envelope"></i>redaazriouil05@gmail.com</a><a
+                                href="https://www.linkedin.com/in/mohamed-reda-azriouil-373943362/" target="_blank" rel="noopener"><i
+                                    class="bi bi-linkedin"></i>LinkedIn</a><a href="https://raw.githubusercontent.com/RedaZAL"
+                                target="_blank" rel="noopener"><i class="bi bi-github"></i>GitHub</a></div>
+                    </div>
+                    <!-- <div class="box">
+                        <form id="contactForm">
+                            <div class="field"><label for="name" data-i="formName">Nom</label><input id="name"
+                                    name="name" required></div>
+                            <div class="field"><label for="email" data-i="formEmail">E-mail</label><input id="email"
+                                    name="email" type="email" required></div>
+                            <div class="field full"><label for="subject" data-i="formSubject">Sujet</label><input
+                                    id="subject" name="subject"></div>
+                            <div class="field full"><label for="message" data-i="formMessage">Message</label><textarea
+                                    id="message" name="message" required></textarea></div>
+                            <div class="field full"><button class="btn primary" type="submit"><span
+                                        data-i="send">Envoyer le message</span> <i class="bi bi-send"></i></button>
+                            </div>
+                        </form>
+                        <p class="note" data-i="formNote">Le bouton ouvre votre application e-mail. Aucun message n'est
+                            enregistré sur ce site.</p>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="wrap foot"><span>© <span id="year"></span> Mohamed Reda AZRIOUIL</span><a href="#home" data-i="backTop">Retour
+                en haut ↑</a></div>
+    </footer>
+    <script>
+        const translations = {
+    fr: {
+        // Navigation
+        navAbout: "À propos",
+        navProjects: "Projets",
+        navSkills: "Compétences",
+        navEducation: "Formation",
+        navContact: "Contact",
+
+        // Hero
+        availability: "Disponible pour un stage et des opportunités junior",
+        heroA: "Développeur Web",
+        heroB: "Full Stack",
+        heroC: "passionné par le développement web.",
+        intro: "Bonjour, je suis Mohamed Reda AZRIOUIL. Je conçois et développe des applications web modernes, de l'interface utilisateur au backend.",
+        viewProjects: "Voir mes projets",
+        downloadCv: "Télécharger mon CV",
+        cvFile: "assets/CV-DEV-FR.pdf",
+        // About
+        aboutKicker: "À propos",
+        aboutTitle: "Un développeur orienté solutions.",
+        aboutIntro: "Diplômé Technicien Spécialisé en Développement Web Full Stack, j'aime transformer des idées en applications utiles et développer mes compétences à travers des projets concrets.",
+        aboutText: "Je travaille avec React, JavaScript, PHP/Laravel et Node.js. Je m'intéresse aussi bien à l'expérience utilisateur qu'à la logique backend, aux API et aux bases de données. Je privilégie un code clair, des interfaces responsives et des solutions faciles à maintenir.",
+        location: "Localisation",
+        degree: "Diplôme",
+        degreeValue: "Technicien Spécialisé",
+        focusLabel: "Spécialité",
+        seeking: "Recherche",
+        seekingValue: "Stage / Poste junior",
+
+        // Contributions
+        contribution: "Ce que je peux apporter",
+        f1: "Création d'interfaces web responsives et accessibles.",
+        f2: "Développement backend et intégration d'API.",
+        f3: "Gestion de données avec MySQL et MongoDB.",
+        f4: "Utilisation de Git, GitHub et des méthodes Agile/Scrum.",
+
+        // Projects
+        projectsKicker: "Réalisations",
+        projectsTitle: "Quelques projets.",
+        projectsIntro: "Une sélection de projets personnels, académiques et de contributions réalisés au cours de mon parcours en développement web.",
+
+        dentalTitle: "Dental Reservation System",
+        dentalDesc: "Application web de prise de rendez-vous pour un cabinet dentaire, comprenant une interface frontend et un backend.",
+        statusNotDeployed: "Projet non déployé",
+
+        pizzaTitle: "Pizza Store — Digital Menu",
+        pizzaDesc: "Site frontend pour un restaurant de pizza, présentant son menu et ses différents produits.",
+        frontendOnly: "Frontend uniquement",
+
+        screenshotSoon: "Capture d'écran à ajouter",
+        clientNotDeployed: "Projet client · Non déployé",
+        noPublicLink: "Lien public non disponible",
+
+        contributionOnly: "Contribution au projet",
+        visitSite: "Visiter le site",
+        afsDesc: "Participation au développement d'une plateforme de réservation de parking près d'un aéroport, avec réservation en ligne, paiement et notifications.",
+
+        tawjihDesc: "Plateforme d'orientation destinée aux étudiants marocains pour découvrir les établissements, les filières et les informations utiles après le baccalauréat.",
+
+        demo: "Voir la démo",
+        projectFour: "Autre projet",
+        otherDesc: "Découvrez un autre projet : son objectif, ma contribution et les technologies utilisées.",
+        ask: "En savoir plus",
+
+        // Skills
+        skillsKicker: "Technologies",
+        skillsTitle: "Compétences techniques.",
+        skillsIntro: "Technologies étudiées et utilisées dans mes projets. Je veille à présenter uniquement les compétences que je peux expliquer et mettre en pratique.",
+
+        // Education & Experience
+        educationKicker: "Parcours",
+        educationTitle: "Formation & expérience.",
+        educationName: "Technicien Spécialisé — Développement Web Full Stack",
+        yearPlaceholder: "Année d'obtention : à compléter",
+        experienceName: "Expérience pratique",
+        experienceText: "Présentez les entreprises, les missions et les dates correspondant à vos expériences réelles. En l'absence d'expérience professionnelle, mettez en valeur vos projets et vos contributions.",
+
+        // Contact
+        contactKicker: "Contact",
+        contactTitle: "Parlons de votre projet.",
+        contactIntro: "Je suis ouvert aux opportunités de stage, aux postes junior et aux projets web intéressants.",
+        contactDetails: "Mes coordonnées",
+        formName: "Nom",
+        formEmail: "E-mail",
+        formSubject: "Sujet",
+        formMessage: "Message",
+        send: "Envoyer le message",
+        formNote: "Ce formulaire ouvre votre application e-mail. Les messages ne sont pas enregistrés sur ce site.",
+
+        // Footer
+        backTop: "Retour en haut ↑"
+    },
+
+    en: {
+        // Navigation
+        navAbout: "About",
+        navProjects: "Projects",
+        navSkills: "Skills",
+        navEducation: "Education",
+        navContact: "Contact",
+
+        // Hero
+        availability: "Open to internship and junior opportunities",
+        heroA: "Full Stack",
+        heroB: "Web Developer",
+        heroC: "passionate about web development.",
+        intro: "Hi, I'm Mohamed Reda AZRIOUIL. I design and build modern web applications, from user interfaces to backend functionality.",
+        viewProjects: "View projects",
+        downloadCv: "Download CV",
+        cvFile: "assets/CV-DEV-EN.pdf",
+        // About
+        aboutKicker: "About",
+        aboutTitle: "A developer focused on solutions.",
+        aboutIntro: "I hold a Specialized Technician diploma in Full Stack Web Development. I enjoy turning ideas into useful applications and improving my skills through hands-on projects.",
+        aboutText: "I work with React, JavaScript, PHP/Laravel and Node.js. I'm interested in both user experience and backend logic, APIs and databases. I value clean code, responsive interfaces and maintainable solutions.",
+        location: "Location",
+        degree: "Qualification",
+        degreeValue: "Specialized Technician",
+        focusLabel: "Specialization",
+        seeking: "Looking for",
+        seekingValue: "Internship / Junior role",
+
+        // Contributions
+        contribution: "What I can contribute",
+        f1: "Building responsive and accessible web interfaces.",
+        f2: "Backend development and API integration.",
+        f3: "Data management with MySQL and MongoDB.",
+        f4: "Using Git, GitHub and Agile/Scrum methodologies.",
+
+        // Projects
+        projectsKicker: "Selected work",
+        projectsTitle: "A few projects.",
+        projectsIntro: "A selection of personal, academic and collaborative projects developed throughout my web development journey.",
+
+        dentalTitle: "Dental Reservation System",
+        dentalDesc: "A dental clinic appointment booking application featuring both frontend and backend components.",
+        statusNotDeployed: "Not deployed",
+
+        pizzaTitle: "Pizza Store — Digital Menu",
+        pizzaDesc: "A frontend website for a pizza restaurant, showcasing its menu and products.",
+        frontendOnly: "Frontend only",
+
+        screenshotSoon: "Screenshot to be added",
+        clientNotDeployed: "Client project · Not deployed",
+        noPublicLink: "No public link available",
+
+        contributionOnly: "Project contribution",
+        visitSite: "Visit website",
+        afsDesc: "Contributed to the development of an airport parking reservation platform featuring online booking, payment and notifications.",
+
+        tawjihDesc: "An educational guidance platform helping Moroccan students explore institutions, study programs and useful post-baccalaureate information.",
+
+        demo: "View demo",
+        projectFour: "Another project",
+        otherDesc: "Explore another project, including its purpose, my contribution and the technologies used.",
+        ask: "Learn more",
+
+        // Skills
+        skillsKicker: "Technologies",
+        skillsTitle: "Technical skills.",
+        skillsIntro: "Technologies studied and used in my projects. I only list skills I can explain and put into practice.",
+
+        // Education & Experience
+        educationKicker: "Background",
+        educationTitle: "Education & experience.",
+        educationName: "Specialized Technician — Full Stack Web Development",
+        yearPlaceholder: "Graduation year: add year",
+        experienceName: "Practical experience",
+        experienceText: "Include the companies, responsibilities and dates that reflect your actual experience. If you have no professional experience yet, highlight your projects and contributions instead.",
+
+        // Contact
+        contactKicker: "Contact",
+        contactTitle: "Let's talk about your project.",
+        contactIntro: "Open to internship opportunities, junior roles and interesting web projects.",
+        contactDetails: "Contact details",
+        formName: "Name",
+        formEmail: "Email",
+        formSubject: "Subject",
+        formMessage: "Message",
+        send: "Send message",
+        formNote: "This form opens your email application. Messages are not stored on this website.",
+
+        // Footer
+        backTop: "Back to top ↑"
+    }
+};
+function setLanguage(lang) {
+    document.documentElement.lang = lang;
+
+    // Update translated elements
+    document.querySelectorAll("[data-i]").forEach(el => {
+        const key = el.dataset.i;
+
+        if (translations[lang][key] !== undefined) {
+            el.textContent = translations[lang][key];
+        }
+    });
+
+    // Update language buttons
+    document.getElementById("fr").classList.toggle(
+        "selected", lang === "fr"
+    );
+
+    document.getElementById("en").classList.toggle(
+        "selected", lang === "en"
+    );
+
+    // Update CV download link
+    document.getElementById("cvDownloadLink").href =
+        translations[lang].cvFile;
+
+    // Update page title
+    document.title = lang === "fr"
+        ? "Mohamed Reda AZRIOUIL — Développeur Full Stack"
+        : "Mohamed Reda AZRIOUIL — Full Stack Web Developer";
+
+    // Save selected language
+    localStorage.setItem("portfolio-language", lang);
+}
+        document.getElementById("lang").addEventListener("click", () => setLanguage(document.documentElement.lang === "fr" ? "en" : "fr"));
+        const saved = localStorage.getItem("portfolio-language"); if (saved === "en") setLanguage("en");
+        const menu = document.getElementById("menu"), links = document.getElementById("links"); menu.addEventListener("click", () => links.classList.toggle("open")); links.querySelectorAll("a").forEach(a => a.addEventListener("click", () => links.classList.remove("open")));
+        document.getElementById("year").textContent = new Date().getFullYear();
+        document.getElementById("contactForm").addEventListener("submit", e => { e.preventDefault(); const d = new FormData(e.target); const to = "your.email@example.com"; const subject = encodeURIComponent(d.get("subject") || "Portfolio contact"); const body = encodeURIComponent(`Name: ${d.get("name")}\nEmail: ${d.get("email")}\n\n${d.get("message")}`); location.href = `mailto:${to}?subject=${subject}&body=${body}` });
+    </script>
+</body>
+
+</html>
